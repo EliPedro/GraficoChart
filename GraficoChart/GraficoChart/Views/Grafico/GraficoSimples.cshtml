@@ -1,45 +1,51 @@
-﻿@{ 
+﻿
+    @{
 
-    var grafico = new Chart(600, 400, theme: ChartTheme.Blue);
+        var grafico = new Chart(width: 600, height: 400, themePath: "~/Xml/ChartTheme.xml");
+        
+        grafico.AddTitle("Vendas");
+        grafico.AddLegend("Tipos");
 
-    grafico.AddTitle("Vendas");
-    grafico.AddLegend("Tipos");
+        grafico.AddSeries
+        (
+            name: "Computadores",
+            chartType: "column",
 
-    grafico.AddSeries
-    (
-        name: "Computadores",
-        chartType: "column",
+            xValue: new[]
+            {"Jan", "Fev","Mar","Abr", "Mai","Jun"},
 
-        xValue: new[]
-        {"Jan", "Fev","Mar","Abr", "Mai","Jun"},
+            yValues: new[]
+            {20,80,60,130,120,150}
 
-        yValues: new[]
-        {20,80,60,130,120,150}
-   );
+       );
 
-    grafico.AddSeries
-    (
-        name: "Notebooks",
-        chartType: "column",
+        grafico.AddSeries
+        (
+            name: "Notebooks",
+            chartType: "column",
 
-        xValue: new[]
-        {"Jan", "Fev","Mar","Abr", "Mai","Jun"},
+            xValue: new[]
+            {"Jan", "Fev","Mar","Abr", "Mai","Jun"},
 
-        yValues: new[]
-        {30,90,70,130,170,200}
-   );
+            yValues: new[]
+            {30,90,70,130,170,200}
+       );
 
-    grafico.AddSeries
-(
-    name: "Roteador",
-    chartType: "column",
+        grafico.AddSeries
+        (
+            name: "Roteador",
+            chartType: "column",
 
-    xValue: new[]
-    {"Jan", "Fev","Mar","Abr", "Mai","Jun"},
+            xValue: new[]
+            {"Jan", "Fev","Mar","Abr", "Mai","Jun"},
 
-    yValues: new[]
-    {200,120,70,110,180,230}
-);
+            yValues: new[]
+            {200,120,70,110,180,230}
 
-    grafico.Write();
-}
+        );
+
+        grafico.Write();
+
+
+    }
+
